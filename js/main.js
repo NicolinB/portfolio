@@ -331,6 +331,47 @@ function initLangToggle() {
 }
 
 /* =========================================================
+   NAV LINKS — scroll fără hash în URL
+   ========================================================= */
+function initNavLinks() {
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const id = link.getAttribute('href');
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      const navH = parseInt(getComputedStyle(document.documentElement)
+        .getPropertyValue('--navbar-h')) || 60;
+      const top = target.getBoundingClientRect().top + window.scrollY - navH;
+      window.scrollTo({ top, behavior: 'smooth' });
+      // URL rămâne https://nicolinb.github.io/portfolio/ fără #hash
+    });
+  });
+}
+
+/* =========================================================
+   SCROLL HINT — săgeata de sub terminal
+   ========================================================= */
+function initScrollHint() {
+  const hint = document.getElementById('scroll-hint');
+  if (!hint) return;
+
+  const scrollToStats = () => {
+    const stats = document.querySelector('.stats');
+    if (stats) stats.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  hint.addEventListener('click', scrollToStats);
+  hint.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); scrollToStats(); }
+  });
+
+  window.addEventListener('scroll', () => {
+    hint.classList.toggle('hidden', window.scrollY > 80);
+  }, { passive: true });
+}
+
+/* =========================================================
    NAVBAR MOBIL — HAMBURGER
    ========================================================= */
 function initNavToggle() {
@@ -479,9 +520,11 @@ document.addEventListener('DOMContentLoaded', () => {
   applyTranslations();
   initLangToggle();
   runTerminalAnimation();
+  initNavLinks();
   initNavToggle();
   initScrollSpy();
   initScrollReveal();
   initCounters();
   initCardLinks();
+  initScrollHint();
 });
