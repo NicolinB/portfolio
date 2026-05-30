@@ -1039,6 +1039,7 @@ footer .footer-version { color: var(--text-dim); }
   .stat-card    { padding: 1rem 0.5rem; }
   .stat-number  { font-size: 2rem; }
   .stat-label   { font-size: 0.65rem; }
+  .stat-tech-list { display: none; }
 
   /* ── Sections ── */
   .section   { padding: 2.5rem 1rem; }
@@ -1071,6 +1072,11 @@ footer .footer-version { color: var(--text-dim); }
   .contact-card { padding: 1.5rem 1rem; }
   .contact-icon { width: 36px; height: 36px; }
   .contact-value { font-size: 0.78rem; }
+
+  /* ── Scroll hint ── */
+  .scroll-hint { padding-top: 1.25rem; }
+  .scroll-hint-label { font-size: 0.55rem; }
+  .scroll-hint-arrow { width: 18px; height: 18px; }
 
   /* ── Footer ── */
   footer .footer-inner { flex-direction: column; text-align: center; gap: 0.4rem; }
