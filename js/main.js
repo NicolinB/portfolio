@@ -352,13 +352,31 @@ function initNavLinks() {
 /* =========================================================
    SCROLL HINT — săgeata de sub terminal
    ========================================================= */
+function smoothScrollTo(targetY, duration = 680) {
+  const startY = window.scrollY;
+  const distance = targetY - startY;
+  const startTime = performance.now();
+  const ease = (t) => t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2;
+
+  const step = (now) => {
+    const progress = Math.min((now - startTime) / duration, 1);
+    window.scrollTo(0, startY + distance * ease(progress));
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
 function initScrollHint() {
   const hint = document.getElementById('scroll-hint');
   if (!hint) return;
 
   const scrollToStats = () => {
     const stats = document.querySelector('.stats');
-    if (stats) stats.scrollIntoView({ behavior: 'smooth' });
+    if (!stats) return;
+    const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--navbar-h')) || 60;
+    smoothScrollTo(stats.getBoundingClientRect().top + window.scrollY - navH);
+    hint.classList.add('clicked');
+    setTimeout(() => hint.classList.remove('clicked'), 400);
   };
 
   hint.addEventListener('click', scrollToStats);
