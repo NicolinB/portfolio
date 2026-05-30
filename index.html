@@ -1,0 +1,512 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Barbaroș Nicolin — Portfolio. Student in Automation and Applied Informatics, Suceava. Projects in Python, Web, C, FPGA." />
+  <meta name="author" content="Barbaroș Nicolin" />
+  <meta property="og:title" content="Barbaroș Nicolin — Portfolio" />
+  <meta property="og:description" content="Student · Automation and Applied Informatics · Suceava" />
+  <meta property="og:type" content="website" />
+  <title>Barbaroș Nicolin | Portfolio</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- =========================================================
+     NAVBAR
+     ========================================================= -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <a href="#hero" class="nav-logo" aria-label="Home">
+    nicolin<span style="color:var(--text-muted)">@</span>dev<span style="color:var(--text-muted)">:~$</span>
+    <span class="cursor" aria-hidden="true"></span>
+  </a>
+
+  <div class="nav-right">
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="#projects" data-i18n="nav.projects">./projects</a></li>
+      <li><a href="#about"    data-i18n="nav.about">./about</a></li>
+      <li><a href="#contact"  data-i18n="nav.contact">./contact</a></li>
+    </ul>
+
+    <!-- Comutator limbă EN / RO -->
+    <button class="lang-toggle" id="lang-toggle" aria-label="Switch language / Schimbă limba">
+      <span class="lang-opt" id="lang-en">EN</span>
+      <span class="lang-sep">|</span>
+      <span class="lang-opt" id="lang-ro">RO</span>
+    </button>
+
+    <button
+      class="nav-toggle"
+      id="nav-toggle"
+      aria-controls="nav-links"
+      aria-expanded="false"
+      aria-label="Open menu"
+    >&#9776;</button>
+  </div>
+</nav>
+
+<!-- =========================================================
+     HERO — terminal animat
+     ========================================================= -->
+<section id="hero" class="hero">
+  <div class="hero-inner">
+    <div class="terminal-window" role="region" aria-label="Interactive terminal">
+      <div class="terminal-titlebar" aria-hidden="true">
+        <div class="terminal-dots">
+          <div class="dot dot-red"    title="Close"></div>
+          <div class="dot dot-yellow" title="Minimize"></div>
+          <div class="dot dot-green"  title="Maximize"></div>
+        </div>
+        <div class="terminal-title">nicolin@dev: ~/portfolio — bash</div>
+      </div>
+
+      <div class="terminal-body" id="terminal-body" aria-live="polite" aria-label="Terminal output">
+        <!-- Rândurile sunt injectate dinamic de main.js -->
+      </div>
+
+      <div
+        class="terminal-body"
+        id="terminal-cursor-final"
+        style="padding-top:0; opacity:0; transition: opacity 0.3s;"
+        aria-hidden="true"
+      >
+        <div class="terminal-cursor-line">
+          <span class="prompt-user">nicolin</span><span class="prompt-at">@</span><span class="prompt-host">dev</span><span class="prompt-at">:</span><span class="prompt-path">~/portfolio</span><span class="prompt-dollar">$&nbsp;</span>
+          <span class="cursor"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     STATS
+     ========================================================= -->
+<div class="stats" id="stats">
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-number" data-count="13">0</div>
+      <div class="stat-label" data-i18n="stats.projects">Projects</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number" data-count="1">0</div>
+      <div class="stat-label" data-i18n="stats.study">Years of Study</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number" data-count="8">0</div>
+      <div class="stat-label" data-i18n="stats.tech">Technologies</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number" data-count="2025">0</div>
+      <div class="stat-label" data-i18n="stats.enrolled">Enrolled</div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     PROIECTE
+     ========================================================= -->
+<div id="projects">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-command">
+        <span class="prompt-path">~/portfolio</span><span class="cmd" data-i18n="cmd.projects"> $ ls -la ./projects/</span>
+      </div>
+      <h2 class="section-title">/<span data-i18n="section.projects">projects</span></h2>
+    </div>
+  </div>
+
+  <!-- ── PYTHON ── -->
+  <div class="section" style="padding-top:0;">
+    <div class="category-block cat-python">
+      <div class="category-header">
+        <span class="category-icon">🐍</span>
+        <span class="category-name">Python</span>
+        <span class="category-count" data-i18n="cat.python.count">3 files</span>
+      </div>
+      <div class="projects-grid">
+
+        <article class="project-card" data-href="https://github.com/NicolinB/file-organizer">
+          <div class="card-ext">.py</div>
+          <h3 class="card-title">file_organizer</h3>
+          <p class="card-desc" data-i18n="proj.auto_backup.desc">Organizes files in any folder into subdirectories by type (Images, Documents, Code…). Includes a dry-run preview mode.</p>
+          <div class="card-badges">
+            <span class="badge">Python 3</span>
+            <span class="badge">os</span>
+            <span class="badge">shutil</span>
+            <span class="badge">CLI</span>
+          </div>
+          
+        </article>
+
+        <article class="project-card" data-href="https://github.com/NicolinB/text-analyzer">
+          <div class="card-ext">.py</div>
+          <h3 class="card-title">text_analyzer</h3>
+          <p class="card-desc" data-i18n="proj.serial_monitor.desc">Reads a text file and outputs word count, sentence count, top-10 word frequency and character statistics. Supports UTF-8 and Latin-1.</p>
+          <div class="card-badges">
+            <span class="badge">Python 3</span>
+            <span class="badge">re</span>
+            <span class="badge">collections</span>
+            <span class="badge">CLI</span>
+          </div>
+          
+        </article>
+
+        <article class="project-card" data-href="https://github.com/NicolinB/unit-converter">
+          <div class="card-ext">.py</div>
+          <h3 class="card-title">unit_converter</h3>
+          <p class="card-desc" data-i18n="proj.grade_calc.desc">CLI unit converter for temperature, length, mass, speed and area. Factor-based conversion table, clean menu interface.</p>
+          <div class="card-badges">
+            <span class="badge">Python 3</span>
+            <span class="badge">math</span>
+            <span class="badge">CLI</span>
+          </div>
+          
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── WEB ── -->
+  <div class="section" style="padding-top:0;">
+    <div class="category-block cat-web">
+      <div class="category-header">
+        <span class="category-icon">🌐</span>
+        <span class="category-name">Web</span>
+        <span class="category-count" data-i18n="cat.web.count">4 files</span>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card" data-href="https://nicolinb.github.io/portfolio/">
+          <div class="card-ext">.html / .js</div>
+          <h3 class="card-title">portfolio_site</h3>
+          <p class="card-desc" data-i18n="proj.portfolio.desc">This site — personal portfolio with a terminal theme, built with pure HTML, CSS and JavaScript, no frameworks.</p>
+          <div class="card-badges">
+            <span class="badge">HTML5</span>
+            <span class="badge">CSS3</span>
+            <span class="badge">JavaScript</span>
+            <span class="badge">GitHub Pages</span>
+          </div>
+          
+        </article>
+
+        <article class="project-card" data-href="https://lafaleza.vercel.app/">
+          <div class="card-ext">.html / .css / .js</div>
+          <h3 class="card-title">La Faleza</h3>
+          <p class="card-desc" data-i18n="proj.lafaleza.desc">Restaurant terrace site in Soroca — sushi, pizza, grill and breakfast. Live menu fetched from Google Sheets via Vercel API. Google Maps integration.</p>
+          <div class="card-badges">
+            <span class="badge">HTML5</span>
+            <span class="badge">CSS3</span>
+            <span class="badge">JavaScript</span>
+            <span class="badge">Vercel</span>
+          </div>
+        </article>
+
+        <article class="project-card" data-href="https://coffeein-demo.vercel.app/">
+          <div class="card-ext">.tsx</div>
+          <h3 class="card-title">CoffeeIN</h3>
+          <p class="card-desc" data-i18n="proj.coffeein.desc">Coffee shop site with hero, gallery, multiple locations with Moldova map and multilingual support. Next.js, Tailwind CSS and Framer Motion.</p>
+          <div class="card-badges">
+            <span class="badge">Next.js</span>
+            <span class="badge">React</span>
+            <span class="badge">TypeScript</span>
+            <span class="badge">Tailwind CSS</span>
+          </div>
+        </article>
+
+        <article class="project-card" data-href="https://apetit-demo.vercel.app/">
+          <div class="card-ext">.tsx</div>
+          <h3 class="card-title">Apetit</h3>
+          <p class="card-desc" data-i18n="proj.apetit.desc">Fast food restaurant site with menu, locations and contact pages. Includes a private /admin panel for content management. Built with React and Vite.</p>
+          <div class="card-badges">
+            <span class="badge">React</span>
+            <span class="badge">Vite</span>
+            <span class="badge">TypeScript</span>
+            <span class="badge">Framer Motion</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── C / SYSTEMS ── -->
+  <div class="section" style="padding-top:0;">
+    <div class="category-block cat-c">
+      <div class="category-header">
+        <span class="category-icon">⚙️</span>
+        <span class="category-name" data-i18n="cat.c.name">C / Systems</span>
+        <span class="category-count" data-i18n="cat.c.count">3 files</span>
+      </div>
+      <div class="projects-grid">
+
+        <article class="project-card" data-href="https://github.com/NicolinB/sorting-demo">
+          <div class="card-ext">.c</div>
+          <h3 class="card-title">sorting_demo</h3>
+          <p class="card-desc" data-i18n="proj.sorting.desc">CLI demo of Bubble, Selection, Insertion and Quick Sort. Step-by-step visualization for small arrays, benchmark with comparison/swap counters for large ones.</p>
+          <div class="card-badges">
+            <span class="badge">C</span>
+            <span class="badge">Algorithms</span>
+            <span class="badge">Benchmarking</span>
+            <span class="badge">time.h</span>
+          </div>
+          
+        </article>
+
+        <article class="project-card" data-href="https://github.com/NicolinB/student-grades">
+          <div class="card-ext">.c</div>
+          <h3 class="card-title">student_grades</h3>
+          <p class="card-desc" data-i18n="proj.alloc.desc">CLI app to manage student grades: add/remove students, sort by average, search by name, class statistics, and save/load from file.</p>
+          <div class="card-badges">
+            <span class="badge">C</span>
+            <span class="badge">structs</span>
+            <span class="badge">file I/O</span>
+            <span class="badge">CLI</span>
+          </div>
+          
+        </article>
+
+        <article class="project-card" data-href="https://github.com/NicolinB/matrix-calc">
+          <div class="card-ext">.c</div>
+          <h3 class="card-title">matrix_calc</h3>
+          <p class="card-desc" data-i18n="proj.matrix.desc">Matrix calculator supporting addition, subtraction, multiplication, transpose, determinant (recursive Laplace) and scalar multiply.</p>
+          <div class="card-badges">
+            <span class="badge">C</span>
+            <span class="badge">math.h</span>
+            <span class="badge">2D arrays</span>
+            <span class="badge">CLI</span>
+          </div>
+          
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FPGA / QUARTUS ── -->
+  <div class="section" style="padding-top:0;">
+    <div class="category-block cat-fpga">
+      <div class="category-header">
+        <span class="category-icon">🔌</span>
+        <span class="category-name">FPGA / Quartus</span>
+        <span class="category-count" data-i18n="cat.fpga.count">3 files</span>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card" data-href="https://github.com/NicolinB/alu-4bit">
+          <div class="card-ext">.vhd / .qpf</div>
+          <h3 class="card-title">alu_4bit</h3>
+          <p class="card-desc" data-i18n="proj.alu.desc">4-bit ALU in VHDL with ADD, SUB, AND, OR, XOR operations and C, Z, S, OV flags.</p>
+          <div class="card-badges">
+            <span class="badge">VHDL</span>
+            <span class="badge">Quartus Prime</span>
+            <span class="badge">MAX10</span>
+            <span class="badge">DE10-Lite</span>
+          </div>
+          
+        </article>
+        <article class="project-card" data-href="https://github.com/NicolinB/traffic-light-fsm">
+          <div class="card-ext">.vhd / .qpf</div>
+          <h3 class="card-title">traffic_light_fsm</h3>
+          <p class="card-desc" data-i18n="proj.traffic.desc">Intersection traffic light implemented as an FSM in Quartus Prime with programmable timers and night mode.</p>
+          <div class="card-badges">
+            <span class="badge">VHDL</span>
+            <span class="badge">FSM</span>
+            <span class="badge">Quartus Prime</span>
+            <span class="badge">DE10-Lite</span>
+          </div>
+          
+        </article>
+        <article class="project-card" data-href="https://github.com/NicolinB/seven-seg-bcd">
+          <div class="card-ext">.vhd</div>
+          <h3 class="card-title">seven_seg_bcd</h3>
+          <p class="card-desc" data-i18n="proj.seg.desc">VHDL driver for 7-segment display, BCD converter, 4-digit synchronous counter with reset and clock enable.</p>
+          <div class="card-badges">
+            <span class="badge">VHDL</span>
+            <span class="badge">BCD</span>
+            <span class="badge">7-segment</span>
+            <span class="badge">DE10-Lite</span>
+          </div>
+          
+        </article>
+
+      </div>
+    </div>
+  </div>
+</div><!-- /#projects -->
+
+<!-- =========================================================
+     DESPRE / ABOUT
+     ========================================================= -->
+<section id="about">
+  <div class="about-inner">
+    <div class="section-header">
+      <div class="section-command">
+        <span class="prompt-path">~/portfolio</span><span class="cmd" data-i18n="cmd.about"> $ cat ./README.md</span>
+      </div>
+      <h2 class="section-title">/<span data-i18n="section.about">about</span></h2>
+    </div>
+
+    <div class="about-grid">
+
+      <!-- README stânga -->
+      <div class="readme-block">
+        <div class="readme-titlebar">README.md</div>
+        <div class="readme-body">
+
+          <div class="readme-row">
+            <span class="readme-key">name</span>
+            <span class="readme-val">Barbaroș Nicolin</span>
+          </div>
+          <div class="readme-row">
+            <span class="readme-key">location</span>
+            <span class="readme-val">Suceava, Romania (from Moldova)</span>
+          </div>
+          <div class="readme-row">
+            <span class="readme-key">university</span>
+            <span class="readme-val">Universitatea "Ștefan cel Mare" Suceava</span>
+          </div>
+          <div class="readme-row">
+            <span class="readme-key">faculty</span>
+            <span class="readme-val" data-i18n="about.faculty">Automation and Applied Informatics</span>
+          </div>
+          <div class="readme-row">
+            <span class="readme-key">year</span>
+            <span class="readme-val" data-i18n="about.year">Year I · 2025–2026</span>
+          </div>
+
+          <hr class="readme-separator" />
+
+          <div class="readme-row" style="flex-direction:column; gap:0.5rem;">
+            <span class="readme-key" style="min-width:auto;">languages</span>
+            <div class="skills-list">
+              <span class="skill-tag">C</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">HTML / CSS</span>
+              <span class="skill-tag">VHDL</span>
+            </div>
+          </div>
+
+          <hr class="readme-separator" />
+
+          <div class="readme-row" style="flex-direction:column; gap:0.5rem;">
+            <span class="readme-key" style="min-width:auto;">tools</span>
+            <div class="skills-list">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">Linux</span>
+              <span class="skill-tag">Quartus Prime</span>
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">PyCharm</span>
+              <span class="skill-tag">MS Office / Excel</span>
+              <span class="skill-tag">AutoCAD</span>
+              <span class="skill-tag">3D Modelling</span>
+            </div>
+          </div>
+
+          <hr class="readme-separator" />
+
+          <div class="readme-row">
+            <span class="readme-key">status</span>
+            <span class="readme-val">
+              <span class="status-indicator">
+                <span class="status-dot"></span>
+                <span data-i18n="about.status">Available for internships</span>
+              </span>
+            </span>
+          </div>
+
+        </div>
+      </div><!-- /readme stânga -->
+
+      <!-- README dreapta -->
+      <div class="readme-block">
+        <div class="readme-titlebar">ABOUT.md</div>
+        <div class="readme-body">
+
+          <div class="readme-row">
+            <span class="readme-key" data-i18n="about.interests.label">interests</span>
+          </div>
+          <p class="about-text" data-i18n="about.p1">I'm passionate about digital systems design and electronics, as well as automating repetitive tasks with Python. I enjoy understanding how things work at the hardware level — from logic gates to processor architectures.</p>
+          <p class="about-text" data-i18n="about.p2">Outside of university, I explore web development and try to build projects that combine software with electronics.</p>
+
+          <hr class="readme-separator" />
+
+          <div class="readme-row">
+            <span class="readme-key" data-i18n="about.currently.label">currently</span>
+          </div>
+          <div class="skills-list" style="margin-bottom:1rem;">
+            <span class="skill-tag" data-i18n="about.curr1">Operating Systems</span>
+            <span class="skill-tag" data-i18n="about.curr2">Networks</span>
+            <span class="skill-tag" data-i18n="about.curr3">Algorithms</span>
+            <span class="skill-tag" data-i18n="about.curr4">FPGA Design</span>
+          </div>
+
+          <hr class="readme-separator" />
+          <blockquote class="about-quote">
+            <span data-i18n="about.quote">"Any sufficiently advanced technology is indistinguishable from magic." — Arthur C. Clarke</span>
+          </blockquote>
+
+        </div>
+      </div><!-- /readme dreapta -->
+
+    </div><!-- /about-grid -->
+  </div>
+</section>
+
+<!-- =========================================================
+     CONTACT
+     ========================================================= -->
+<section id="contact">
+  <div class="section-header" style="margin-bottom:2rem;">
+    <div class="section-command">
+      <span class="prompt-path">~/portfolio</span><span class="cmd" data-i18n="cmd.contact"> $ cat ./contact.json</span>
+    </div>
+    <h2 class="section-title">/<span data-i18n="section.contact">contact</span></h2>
+  </div>
+
+  <div class="contact-grid contact-grid--two">
+
+    <a href="mailto:barbarosnicolin@gmail.com" class="contact-card email" aria-label="Send email">
+      <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <rect x="2" y="4" width="20" height="16" rx="2"/>
+        <path d="M2 7l10 7 10-7"/>
+      </svg>
+      <span class="contact-type">email</span>
+      <span class="contact-value">barbarosnicolin@gmail.com</span>
+      <span class="contact-action" data-i18n="contact.email.action">→ Send an email</span>
+    </a>
+
+    <a href="https://github.com/NicolinB" class="contact-card github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+      <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"/>
+      </svg>
+      <span class="contact-type">github</span>
+      <span class="contact-value">@NicolinB</span>
+      <span class="contact-action" data-i18n="contact.github.action">→ See projects</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      &copy; 2025 <span>Barbaroș Nicolin</span>
+    </div>
+    <div class="footer-version">
+      <span data-i18n="footer.built">HTML, CSS &amp; JS</span> · v1.1.0 · GitHub Pages
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

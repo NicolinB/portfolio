@@ -1,0 +1,17 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Assets temporare
+assets/temp/
+*.tmp
+
+# Nu comite date sensibile
+*.env
