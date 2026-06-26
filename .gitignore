@@ -15,3 +15,4 @@ assets/temp/
 
 # Nu comite date sensibile
 *.env
+.claude/
